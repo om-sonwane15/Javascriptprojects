@@ -1,0 +1,42 @@
+Day 2 React Components and DOM Architecture
+
+Component are independent and reusable code. App works like root. In react everything is a component. For passing data in another component Props are used as parameters are given to it.
+
+Types of components in react-
+
+Class component- It requires render() function to return HTML.
+Eg. 
+class Om extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+
+Function component-It uses hooks (Eg. useState, useEffect) for state and lifecycle methods.
+Eg.
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+Props Component- Props are read-only inputs that are passed from a parent component to a child component. It enables dynamic data flow and reusability. It enables communication between component and is immutable.
+
+Example-
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+import Card from "./components/Card"
+
+
+DOM is a structure that help to present all elements in the browser like buttons, paragraphs, headings. When changed, virtual DOM in react is used as it checks what is changed and update only the specific part for smoother experience.React.js uses a unique DOM architecture to efficiently update and render the UI.
+
+Real DOM (Browser DOM) is the actual structure of the webpage.
+Virtual DOM (React's optimized version), when state changes, react compares the new Virtual DOM with the old one and updates only the changed parts.
+React Fiber (Reconciliation Algorithm) is used to handle updates efficiently.
+
+Example
+<h1>Eg for react virtual DOM</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Clicked {count} times
+      </button>
+
+React Router DOM is a collection of components and provides a way to synchronize the UI with the URL. It is basically a library that handles routing and navigation.
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
