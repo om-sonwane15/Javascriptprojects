@@ -1,0 +1,9 @@
+Day -1 REST API and Crud operation
+
+The REST API -(representational state transfer application programming interface) is a set of rules that allows different software applications to communicate with each other over the internet. We use post, get, put or delete request of a web URL as HTTP which is from client to server side.
+
+The CRUD operations (create, read, update, and delete) are mapped to HTTP methods that are the four basic operations for managing data in database or application.
+Create(post) is used to add new data.
+Read(get) is used to retrieve or view the existing data. 
+Update(put) is used to update or modify the data. 
+Delete(delete) is used to remove the data. 
