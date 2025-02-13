@@ -1,0 +1,73 @@
+Day -9 API Integration in Reactjs
+
+An API (Application Programming Interface) is a bridge that allows two different software systems to communicate with each other. It defines a set of rules and protocols for requesting and exchanging data. It can be used to retrieve information from external sources, send data to external services, or perform various other actions.
+
+API Integration in React-
+Types of APIs-
+REST API (Representational State Transfer)- Uses HTTP methods like GET, POST, PUT, DELETE.
+GraphQL APIs- A more flexible query language for APIs.
+WebSockets- For real-time bidirectional communication.
+
+HTTP Methods-
+GET- Fetch data from the server.
+POST- Send new data to the server.
+PUT- Update existing data.
+DELETE- Remove data from the server.
+
+external API in Node.js(using Axios)
+dependencies
+npm init -y
+npm install express axios
+
+const express = require('express');
+const axios = require('axios');
+
+index.html file-(frontend)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+</head>
+<body>
+    <h2>Random Image of Dogs</h2>
+    <button onclick="getRandomImage()">Get New Image</button>
+    <br><br>
+    <img id="randomImage" src="" alt="Random Image" width="400px" height="300px">
+
+    <script>
+        async function getRandomImage() {
+            try {
+                const response = await axios.get("https://dog.ceo/api/breeds/image/random");
+                document.getElementById("randomImage").src = response.data.message; 
+            } catch (error) {
+                console.error("Error fetching image:", error);
+            }
+        }
+        getRandomImage(); 
+    </script>
+</body>
+</html>
+
+
+Server.js file-(backend)
+const express = require('express');
+const axios = require('axios');
+
+const app = express();
+const PORT = 5000;
+
+// API Route to Fetch Data from an External API
+app.get('/', async (req, res) => {
+    try {
+        const response = await axios.get('https://dog.ceo/api/breeds/image/random');
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch data' });
+    }
+});
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
