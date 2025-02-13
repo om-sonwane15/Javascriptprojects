@@ -1,4 +1,4 @@
-Day -9 API Integration in Reactjs
+Day -9 API Integration
 
 An API (Application Programming Interface) is a bridge that allows two different software systems to communicate with each other. It defines a set of rules and protocols for requesting and exchanging data. It can be used to retrieve information from external sources, send data to external services, or perform various other actions.
 
