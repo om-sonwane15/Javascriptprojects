@@ -1,1 +1,23 @@
+Day -9 API Integration
 
+An API (Application Programming Interface) is a bridge that allows two different software systems to communicate with each other. It defines a set of rules and protocols for requesting and exchanging data. It can be used to retrieve information from external sources, send data to external services, or perform various other actions.
+
+API Integration in React-
+Types of APIs-
+REST API (Representational State Transfer)- Uses HTTP methods like GET, POST, PUT, DELETE.
+GraphQL APIs- A more flexible query language for APIs.
+WebSockets- For real-time bidirectional communication.
+
+HTTP Methods-
+GET- Fetch data from the server.
+POST- Send new data to the server.
+PUT- Update existing data.
+DELETE- Remove data from the server.
+
+external API in Node.js(using Axios)
+dependencies
+npm init -y
+npm install express axios
+
+const express = require('express');
+const axios = require('axios');
