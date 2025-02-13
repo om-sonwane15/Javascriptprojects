@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+</head>
+<body>
+    <h2>Random Image of Dogs</h2>
+    <button onclick="getRandomImage()">Get New Image</button>
+    <br><br>
+    <img id="randomImage" src="" alt="Random Image" width="400px" height="300px">
+
+    <script>
+        async function getRandomImage() {
+            try {
+                const response = await axios.get("https://dog.ceo/api/breeds/image/random");
+                document.getElementById("randomImage").src = response.data.message; 
+            } catch (error) {
+                console.error("Error fetching image:", error);
+            }
+        }
+        getRandomImage(); 
+    </script>
+</body>
+</html>
