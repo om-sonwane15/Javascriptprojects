@@ -1,0 +1,31 @@
+Day -8
+R&D on NodeJS and how to create a server with the help of ExpressJS.
+
+Node.js is an open source, cross-platform runtime environment and library that is used for running web applications outside the client’s browser.
+
+It is used for server-side programming, and primarily deployed for non-blocking, event-driven servers. Every browser has its own version of a JS engine, and node.js is built on Google Chrome’s V8 JavaScript engine.
+
+To create simple server with express.js, install node.js and initialize new node.js project (npm init -y) this creates a package.json file.
+
+Then install Express.js (npm install express)
+
+Example-
+Create a Simple Express Server-
+const express = require('express');  
+const app = express();              
+
+const PORT = 3000;
+app.get('/', (req, res) => {
+    res.send('Hello, This is Express.js Server');
+});
+app.listen(PORT, () => {
+    console.log('server is running on http://localhost:${PORT}');
+});
+
+To run the server-
+node server.js OR nodemon server.js
+
+To test the server-http://localhost:3000
+
+Node.js provides a powerful environment for server-side development.
+Express.js makes it easy to build APIs and web servers with simple syntax.
