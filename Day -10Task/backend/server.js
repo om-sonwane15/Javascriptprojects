@@ -11,7 +11,7 @@ app.use(express.json());
 const API_KEY = process.env.WEATHER_API_KEY; 
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Weather API! Use /weather?city=CityName to get the weather.");
+  res.send("Welcome to the Weather API!");
 });
 
 app.get("/weather", async (req, res) => {
