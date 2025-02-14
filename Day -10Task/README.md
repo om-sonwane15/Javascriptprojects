@@ -1,8 +1,18 @@
-# React + Vite
+Day -10 R&D on Postman and API, how it works
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An API (Application Programming Interface) is a way for different software applications to communicate with each other. APIs allow developers to fetch or send data between a client (frontend) and a server (backend).
 
-Currently, two official plugins are available:
+Postman is a popular API testing tool that helps developers interact with APIs, send requests, inspect responses, and debug issues before integrating them into their JavaScript applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Postman allows to-
+Send HTTP requests (GET, POST, PUT, DELETE)
+Inspect API responses
+Add headers, parameters, and authentication
+Automate API testing
+
+To run frontend and backend files-
+weather-app> npm run dev for app.jsx
+backend> nodemon server.js for server.js file
+
+GET - http://localhost:5000/
+Postman output: Welcome to the Weather API!
