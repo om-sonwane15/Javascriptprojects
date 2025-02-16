@@ -1,0 +1,47 @@
+Day- 7 (Self Study)
+React Hooks-
+
+1)useState Hook- The useState hook is used to add state to a functional component.
+2)useContext Hook- The useContext hook is used to consume values from a React context.
+3)useReducer Hook- The useReducer hook is a more advanced state management solution that is usually preferred when state logic is complex or involves multiple sub-values
+4)useRef Hook- The useRef hook is used to access a DOM element directly or persist values across renders without causing re-renders.
+5)custom Hook: useCounter- A custom hook is a function that allows to reuse logic across multiple components. It doesn't render any UI itself, but it contains reusable logic and can return values and functions to be used by other components.
+
+Example-
+1)useCounter Custom Hook-
+import {useState} from 'react';
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(initialValue);
+  return { count, increment, decrement, reset };
+}
+export default useCounter;
+
+2)useCounter Hook in a Component (Counter)-
+import React from 'react';
+import useCounter from './useCounter';
+
+function Counter() {
+  // Call the custom hook and destructure the returned object
+  const { count, increment, decrement, reset } = useCounter(10);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+Why Use Custom Hooks?
+It provides reusability- The useCounter custom hook can be reused in any component where counter is needed, and there is no need to repeat the same state logic.
+It provides separation of Concerns- By using custom hooks, separation of the business logic (counter functionality) from the UI (React component), makes the components simpler.
+For maintainability- Any changes to the counter logic (like adding a max limit) only need to be done inside the custom hook, without modifying each component that uses it.
