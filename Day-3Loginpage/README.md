@@ -1,4 +1,5 @@
 Day -3 LoginPage
+
 This is a basic Login Page created using React.js. The project allows users to input their credentials (e.g., username/email and password) to log in. 
 
 Git Commands used to upload the project to GitHub:
